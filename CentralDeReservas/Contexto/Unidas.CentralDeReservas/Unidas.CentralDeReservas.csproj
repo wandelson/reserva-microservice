@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>Unidas.CentralDeReservas</AssemblyName>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="Aplicacao\Reservas\ReservaService.cs" />
+    <Compile Remove="Dominio.Modelos\EmptyClass.cs" />
+    <Compile Remove="EmptyClass.cs" />
+    <Compile Remove="Aplicacao\Orders\Profiles\EmptyClass.cs" />
+    <Compile Remove="ReservaService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="6.2.2" />
+    <PackageReference Include="FluentValidation" Version="7.5.2" />
+    <PackageReference Include="MediatR" Version="4.1.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\RecursosCompartilhado\Dominio\Unidas.Core\Unidas.Core.csproj" />
+  </ItemGroup>
+</Project>
