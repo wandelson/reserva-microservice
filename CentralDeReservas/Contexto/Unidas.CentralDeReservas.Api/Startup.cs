@@ -1,4 +1,5 @@
-﻿using FluentValidation.AspNetCore;
+﻿using FluentValidation;
+using FluentValidation.AspNetCore;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -6,6 +7,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using System.Globalization;
 using System.Reflection;
 using Unidas.CentralDeReservas.Api;
 using Unidas.CentralDeReservas.Aplicacao.Reservas.Commands;
@@ -35,6 +37,7 @@ namespace Unidas.Checkout.Api
         {            
             services.AddDbContext<ReservaContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
+            ValidatorOptions.LanguageManager.Culture = new CultureInfo("pt-br");
 
             // Infra - Data
             services.AddScoped<IReservaRepository, ReservaRepository>();

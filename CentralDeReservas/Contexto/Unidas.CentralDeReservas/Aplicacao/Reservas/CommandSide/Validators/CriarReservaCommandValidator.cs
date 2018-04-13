@@ -7,7 +7,7 @@ namespace Unidas.CentralDeReservas.Aplicacao.Reservas.Validators
     {
         public CriarReservaCommandValidator()
         {
-            RuleFor(x => x.Acordo).NotEmpty().WithMessage("O Campo acordo é obrigatótio");
+            RuleFor(x => x.Acordo).NotEmpty();
 
         }
     }
